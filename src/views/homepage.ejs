@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <style>
+        .article-container {
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .article-description {
+            margin-bottom: 10px;
+        }
+
+        .btn-read-more {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .btn-read-more:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar-text {
+            margin-right: 15px;
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #000;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">News App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <span class="navbar-text mr-3">
+            User Email: <strong><%= user.email %></strong>
+        </span>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <form action="/logout?_method=DELETE" method="POST" class="nav-link">
+                    <button type="submit" class="btn btn-outline-danger">Logout</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Daily Digest - Stay Informed!</h1>
+    <div class="welcome-message">
+        Welcome, <strong><%= user.name %></strong>! Here are today's top headlines:
+    </div>
+    <div class="row" id="news-section"></div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">© 2024 News App. All rights reserved. Contact: <a href="mailto:avatharkomalathu@gmail.com">avatharkomalathu@gmail.com</a></p>
+    </div>
+</footer>
+
+<script>
+    const apiKey = 'cd559501983246a2b5f6ebfaaadbd0cc';
+    const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const articles = data.articles;
+
+            articles.forEach(article => {
+                const articleContainer = document.createElement('div');
+                articleContainer.classList.add('col-md-4', 'mb-4', 'article-container');
+
+                const articleImage = document.createElement('img');
+                articleImage.classList.add('article-image');
+                articleImage.src = article.urlToImage ? article.urlToImage : 'https://via.placeholder.com/300x200';
+                articleImage.alt = article.title;
+
+                const articleContent = document.createElement('div');
+                articleContent.classList.add('article-content');
+
+                const title = document.createElement('h2');
+                title.classList.add('article-title');
+                title.textContent = article.title;
+
+                const description = document.createElement('p');
+                description.classList.add('article-description');
+                description.textContent = article.description;
+
+                const readMoreLink = document.createElement('a');
+                readMoreLink.classList.add('btn', 'btn-read-more');
+                readMoreLink.href = article.url;
+                readMoreLink.textContent = 'Read More';
+
+                articleContent.appendChild(title);
+                articleContent.appendChild(description);
+                articleContent.appendChild(readMoreLink);
+
+                articleContainer.appendChild(articleImage);
+                articleContainer.appendChild(articleContent);
+
+                document.getElementById('news-section').appendChild(articleContainer);
+            });
+        })
+        .catch(error => console.error('Error fetching news:', error));
+</script>
+</body>
+</html>
