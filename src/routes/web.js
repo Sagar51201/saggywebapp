@@ -5,7 +5,6 @@ import loginController from "../controllers/loginController";
 import auth from "../validation/authValidation";
 import passport from "passport";
 import initPassportLocal from "../controllers/passportLocalController";
-
 // Init all passport
 initPassportLocal();
 

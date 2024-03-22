@@ -152,5 +152,26 @@
         })
         .catch(error => console.error('Error fetching news:', error));
 </script>
+<script>
+    function logActivity(activity) {
+        fetch('/log', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ activity: activity })
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log(`Activity logged: ${activity}`);
+            } else {
+                console.error('Failed to log activity:', response.statusText);
+            }
+        })
+        .catch(error => {
+            console.error('Error logging activity:', error);
+        });
+    }
+</script>
 </body>
 </html>

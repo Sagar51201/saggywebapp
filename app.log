@@ -1,0 +1,110 @@
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-16T12:15:57.670Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-16T12:19:08.966Z"}
+{"level":"info","message":"User logged out successfully","timestamp":"2024-03-16T12:20:35.564Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-16T12:20:35.569Z"}
+{"level":"info","message":"User 1 authenticated successfully","timestamp":"2024-03-16T12:22:00.678Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-16T12:22:00.683Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:23:10.056Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:23:11.223Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-16T12:23:19.298Z"}
+{"level":"info","message":"User 1 authenticated successfully","timestamp":"2024-03-16T12:23:25.255Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-16T12:23:25.263Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:28:48.680Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:29:37.625Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:29:39.149Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:29:40.482Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:29:50.159Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:30:08.460Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:30:12.606Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:30:26.449Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:30:33.628Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:30:37.496Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:30:39.968Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:30:43.807Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:30:49.235Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:32:39.415Z"}
+{"level":"info","message":"HTML page requested: /","timestamp":"2024-03-16T12:32:57.360Z"}
+{"level":"info","message":"HTML page requested: /login","timestamp":"2024-03-16T12:32:57.368Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-16T12:32:57.369Z"}
+{"level":"info","message":"HTML page requested: /login","timestamp":"2024-03-16T12:33:02.920Z"}
+{"level":"info","message":"User 1 authenticated successfully","timestamp":"2024-03-16T12:33:02.997Z"}
+{"level":"info","message":"HTML page requested: /","timestamp":"2024-03-16T12:33:03.004Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-16T12:33:03.005Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:33:59.834Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:34:07.271Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:39:45.842Z"}
+{"level":"info","message":"Server is running on port 8080","timestamp":"2024-03-16T12:40:39.662Z"}
+{"level":"info","message":"Server is running on port 8080","timestamp":"2024-03-16T12:41:27.951Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-16T12:41:34.027Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-16T12:41:57.371Z"}
+{"level":"info","message":"User 1 authenticated successfully","timestamp":"2024-03-16T12:42:04.101Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-16T12:42:04.108Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-20T14:03:07.503Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-20T14:03:14.258Z"}
+{"level":"info","message":"User 1 authenticated successfully","timestamp":"2024-03-20T14:03:20.617Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-20T14:03:20.636Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-20T14:05:20.681Z"}
+{"level":"info","message":"Server is running on port 8080","timestamp":"2024-03-21T11:00:59.071Z"}
+{"level":"info","message":"Connected to MySQL database successfully!","timestamp":"2024-03-21T11:00:59.135Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-21T11:01:24.801Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-21T11:01:35.643Z"}
+{"level":"info","message":"User with email ava@12 not found","timestamp":"2024-03-21T11:01:54.517Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-21T11:01:54.523Z"}
+{"level":"info","message":"Authentication failed for user 3: The password that you've entered is incorrect","timestamp":"2024-03-21T11:02:01.541Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-21T11:02:01.547Z"}
+{"level":"info","message":"Authentication failed for user 3: The password that you've entered is incorrect","timestamp":"2024-03-21T11:02:09.922Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-21T11:02:09.927Z"}
+{"level":"info","message":"User 1 authenticated successfully","timestamp":"2024-03-21T11:02:15.338Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:02:15.346Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:04.407Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:11.779Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:40.907Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:42.398Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:43.067Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:43.278Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:43.497Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:43.693Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:43.890Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:44.137Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:44.356Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:44.956Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:03:45.165Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:05:50.041Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:06.722Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:10.307Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:10.831Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:11.110Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:11.334Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:11.578Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:11.807Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:12.040Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:12.248Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:12.492Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:14.208Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:15.050Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:08:16.465Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:21.106Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:21.882Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:22.454Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:22.726Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:22.932Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:23.151Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:23.356Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:23.619Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:23.867Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:40.849Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:54.708Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:09:57.835Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:10:04.110Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:10:29.149Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:10:56.622Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:10:58.101Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-03-21T11:11:03.455Z"}
+{"level":"info","message":"User logged out successfully","timestamp":"2024-03-21T11:11:10.611Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-03-21T11:11:10.616Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-22T03:35:38.299Z"}
+{"level":"info","message":"Connected to MySQL database successfully!","timestamp":"2024-03-22T03:35:38.337Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-22T03:43:01.132Z"}
+{"level":"info","message":"Connected to MySQL database successfully!","timestamp":"2024-03-22T03:43:01.165Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-03-22T03:43:30.186Z"}
+{"level":"info","message":"Connected to MySQL database successfully!","timestamp":"2024-03-22T03:43:30.207Z"}
