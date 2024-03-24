@@ -48,7 +48,7 @@ let createNewUser = async (req, res) => {
             password: req.body.password
         };
         await registerService.createNewUser(newUser);
-        logger.info('New user created successfully');
+        logger.info(`New user created successfully: ${JSON.stringify(newUser)}`);
         return res.redirect("/login");
     } catch (error) {
         logger.error('Error creating new user:', error);

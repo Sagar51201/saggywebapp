@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>News App</title>
+    <title>FAQ - News App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -68,43 +68,42 @@
 
         .btn-start {
             background-color: #007bff;
-            color: #fff;
+            color: #433c3c;
             border: none;
-            border-radius: 25px;
-            padding: 10px 30px;
-            font-size: 1.2rem;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-            text-decoration: none; /* Remove underline */
-        }
+            border-radius: 25px
+            ;
+padding: 10px 30px;
+font-size: 1.2rem;
+margin-top: 20px;
+transition: background-color 0.3s;
+text-decoration: none; /* Remove underline */
+}
+.btn-start:hover {
+        background-color: #0056b3;
+    }
 
-        .btn-start:hover {
-            background-color: #0056b3;
-        }
-
-        .footer {
-            background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
-            padding: 20px 0;
-            text-align: center;
-            color: #fff;
-            position: relative;
-            z-index: 1;
-        }
-    </style>
+    .footer {
+        background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+        padding: 20px 0;
+        text-align: center;
+        color: #f0f0f0;
+        position: relative;
+        z-index: 1;
+    }
+</style>
 </head>
 <body>
-
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="/">News App</a>
+        <a class="navbar-brand" href="/news">News App</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/news">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About</a>
@@ -122,20 +121,63 @@
         </div>
     </div>
 </nav>
-
 <!-- Jumbotron Section -->
 <div class="jumbotron">
-    <h1 class="display-4">Stay Informed</h1>
-    <p class="lead">Get the latest news updates from around the world.</p>
-    <a href="/news" class="btn btn-start">Get Started</a>
+    <h1 class="display-4">FAQ</h1>
+    <p class="lead">Frequently Asked Questions</p>
+    <hr class="my-4">
+    <div class="container">
+        <div class="accordion" id="faqAccordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Question 1: What is News App?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        News App is a platform that provides users with the latest news updates from around the world.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Question 2: How can I use News App?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        You can use News App by visiting our website or downloading our mobile app from the App Store or Google Play Store.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Question 3: Is News App free to use?
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                    <div class="card-body">
+                        Yes, News App is free to use. However, some premium features may require a subscription.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
 <!-- Footer Section -->
 <footer class="footer">
     <div class="container">
         <p>&copy; 2024 News App. All rights reserved. Contact: <a href="mailto:avatharkomalathu@gmail.com">avatharkomalathu@gmail.com</a></p>
     </div>
 </footer>
-
 </body>
-</html>
+</html>    

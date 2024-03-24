@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>News App</title>
+    <title>News - News App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -52,38 +52,61 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        .jumbotron {
-            background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+        .news-container {
+            padding: 20px;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .article-card {
+            width: 300px;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
             text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            z-index: 1;
         }
 
-        .jumbotron h1,
-        .jumbotron p,
-        .jumbotron a {
-            text-decoration: none; /* Remove underline */
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
 
-        .btn-start {
+        .article-content {
+            padding: 20px;
+        }
+
+        .article-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .article-description {
+            margin-bottom: 10px;
+        }
+
+        .btn-read-more {
             background-color: #007bff;
             color: #fff;
             border: none;
-            border-radius: 25px;
-            padding: 10px 30px;
-            font-size: 1.2rem;
-            margin-top: 20px;
+            border-radius: 3px;
+            padding: 5px 10px;
+            text-decoration: none;
+            cursor: pointer;
             transition: background-color 0.3s;
-            text-decoration: none; /* Remove underline */
         }
 
-        .btn-start:hover {
+        .btn-read-more:hover {
             background-color: #0056b3;
         }
 
         .footer {
-            background-color: rgba(0, 0, 0, 0.5); /* Transparent black */
+            background-color: rgba(0, 0, 0, 0.8); /* Transparent black */
             padding: 20px 0;
             text-align: center;
             color: #fff;
@@ -104,7 +127,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/news">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/about">About</a>
@@ -123,11 +146,9 @@
     </div>
 </nav>
 
-<!-- Jumbotron Section -->
-<div class="jumbotron">
-    <h1 class="display-4">Stay Informed</h1>
-    <p class="lead">Get the latest news updates from around the world.</p>
-    <a href="/news" class="btn btn-start">Get Started</a>
+<!-- News Section -->
+<div class="container-fluid news-container" id="news-section">
+    <!-- News articles will be dynamically added here -->
 </div>
 
 <!-- Footer Section -->
@@ -137,5 +158,50 @@
     </div>
 </footer>
 
-</body>
-</html>
+<!-- Fetch and display news articles -->
+<script>
+    const apiKey = 'cd559501983246a2b5f6ebfaaadbd0cc';
+    const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+    fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            const articles = data.articles;
+
+            articles.forEach(article => {
+                const articleContainer = document.createElement('div');
+                articleContainer.classList.add('col-md-4', 'mb-4', 'article-container');
+
+                const articleImage = document.createElement('img');
+                articleImage.classList.add('article-image');
+                articleImage.src = article.urlToImage ? article.urlToImage : 'https://via.placeholder.com/300x200';
+                articleImage.alt = article.title;
+
+                const articleContent = document.createElement('div');
+                articleContent.classList.add('article-content');
+
+                const title = document.createElement('h2');
+                title.classList.add('article-title');
+                title.textContent = article.title;
+
+                const description = document.createElement('p');
+                description.classList.add('article-description');
+                description.textContent = article.description;
+
+                const readMoreLink = document.createElement('a');
+                readMoreLink.classList.add('btn', 'btn-read-more');
+                readMoreLink.href = article.url;
+                readMoreLink.textContent = 'Read More';
+
+                articleContent.appendChild(title);
+                articleContent.appendChild(description);
+                articleContent.appendChild(readMoreLink);
+
+                articleContainer.appendChild(articleImage);
+                articleContainer.appendChild(articleContent);
+
+                document.getElementById('news-section').appendChild(articleContainer);
+            });
+        })
+        .catch(error => console.error('Error fetching news:', error));
+</script>
