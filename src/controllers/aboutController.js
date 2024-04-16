@@ -13,6 +13,10 @@ const logger = winston.createLogger({
     ]
 });
 
+// Add transports for error and warn levels
+logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+
 // Render the About page
 let getPageAbout = (req, res) => {
     try {
@@ -45,16 +49,18 @@ let getPageFAQ = (req, res) => {
         return res.status(500).send('Internal Server Error');
     }
 };
+
 // Render the NEWS page
 let getPageNEWS = (req, res) => {
     try {
         logger.info('Rendering newsapi page');
-        return res.render("news.ejs"); // Render the FAQ view template
+        return res.render("news.ejs"); // Render the NEWS view template
     } catch (error) {
         logger.error('Error rendering news page:', error);
         return res.status(500).send('Internal Server Error');
     }
 };
+
 module.exports = {
     getPageAbout: getPageAbout,
     getPageContact: getPageContact,

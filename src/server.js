@@ -29,6 +29,10 @@ const logger = winston.createLogger({
     ]
 });
 
+// Add transports for error and warn levels
+logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+
 // Use cookie parser
 app.use(cookieParser('secret'));
 
@@ -146,5 +150,5 @@ metricsApp.get('/', (req, res) => {
 });
 
 metricsApp.listen(METRICS_PORT, () => {
-    console.log(`Metrics server is running on port ${METRICS_PORT}`);
+    logger.info(`Metrics server is running on port ${METRICS_PORT}`);
 });

@@ -16,6 +16,10 @@ const logger = winston.createLogger({
     ]
 });
 
+// Add transports for error and warn levels
+logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
+logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+
 let LocalStrategy = passportLocal.Strategy;
 
 let initPassportLocal = () => {
