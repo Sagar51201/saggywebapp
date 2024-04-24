@@ -14,8 +14,8 @@ const logger = winston.createLogger({
 });
 
 // Add transports for error and warn levels
-logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
-logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+logger.add(new winston.transports.File({ filename: 'error.log', level: 'error', format: winston.format.json() }));
+logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn', format: winston.format.json() }));
 
 // Render the About page
 let getPageAbout = (req, res) => {
@@ -23,7 +23,7 @@ let getPageAbout = (req, res) => {
         logger.info('Rendering About page');
         return res.render("about.ejs"); // Render the about view template
     } catch (error) {
-        logger.error('Error rendering About page:', error);
+        logger.error({ message: 'Error rendering About page', error }); // Log error in JSON format
         return res.status(500).send('Internal Server Error');
     }
 };
@@ -34,7 +34,7 @@ let getPageContact = (req, res) => {
         logger.info('Rendering Contact page');
         return res.render("contact.ejs"); // Render the contact view template
     } catch (error) {
-        logger.error('Error rendering Contact page:', error);
+        logger.error({ message: 'Error rendering Contact page', error }); // Log error in JSON format
         return res.status(500).send('Internal Server Error');
     }
 };
@@ -45,7 +45,7 @@ let getPageFAQ = (req, res) => {
         logger.info('Rendering FAQ page');
         return res.render("faq.ejs"); // Render the FAQ view template
     } catch (error) {
-        logger.error('Error rendering FAQ page:', error);
+        logger.error({ message: 'Error rendering FAQ page', error }); // Log error in JSON format
         return res.status(500).send('Internal Server Error');
     }
 };
@@ -56,7 +56,7 @@ let getPageNEWS = (req, res) => {
         logger.info('Rendering newsapi page');
         return res.render("news.ejs"); // Render the NEWS view template
     } catch (error) {
-        logger.error('Error rendering news page:', error);
+        logger.error({ message: 'Error rendering news page', error }); // Log error in JSON format
         return res.status(500).send('Internal Server Error');
     }
 };

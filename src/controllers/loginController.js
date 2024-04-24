@@ -16,8 +16,8 @@ const logger = winston.createLogger({
 });
 
 // Add transports for error and warn levels
-logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
-logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+logger.add(new winston.transports.File({ filename: 'error.log', level: 'error', format: winston.format.json() }));
+logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn', format: winston.format.json() }));
 
 let getPageLogin = (req, res) => {
     try {
@@ -26,7 +26,7 @@ let getPageLogin = (req, res) => {
             errors: req.flash("errors")
         });
     } catch (error) {
-        logger.error('Error rendering login page:', error);
+        logger.error({ message: 'Error rendering login page', error }); // Log error in JSON format
         return res.status(500).send('Internal Server Error');
     }
 };
@@ -48,7 +48,7 @@ let handleLogin = async (req, res) => {
         logger.info(`User ${req.body.email} logged in successfully`);
         return res.redirect("/");
     } catch (error) {
-        logger.error(`Error handling login for user ${req.body.email}:`, error);
+        logger.error({ message: `Error handling login for user ${req.body.email}`, error }); // Log error in JSON format
         req.flash("errors", error);
         return res.redirect("/login");
     }
@@ -71,7 +71,7 @@ let checkLoggedOut = (req, res, next) => {
 let postLogOut = (req, res) => {
     req.session.destroy(function(err) {
         if (err) {
-            logger.error('Error logging out:', err);
+            logger.error({ message: 'Error logging out', err }); // Log error in JSON format
         } else {
             logger.info('User logged out successfully');
         }

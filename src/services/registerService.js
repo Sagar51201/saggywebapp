@@ -7,7 +7,7 @@ const logger = winston.createLogger({
     level: 'info',
     format: winston.format.combine(
         winston.format.timestamp(),
-        winston.format.simple()
+        winston.format.json() // Use JSON format for logging
     ),
     transports: [
         new winston.transports.Console(),
@@ -16,8 +16,8 @@ const logger = winston.createLogger({
 });
 
 // Add transports for error and warn levels
-logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
-logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+logger.add(new winston.transports.File({ filename: 'error.log', level: 'error', format: winston.format.json() }));
+logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn', format: winston.format.json() }));
 
 let createNewUser = (data) => {
     return new Promise(async (resolve, reject) => {
@@ -25,7 +25,7 @@ let createNewUser = (data) => {
         let isEmailExist = await checkExistEmail(data.email);
         if (isEmailExist) {
             reject(`This email "${data.email}" has already exist. Please choose another email`);
-            logger.warn(`Attempt to create user with existing email: ${data.email}`);
+            logger.warn({ message: `Attempt to create user with existing email: ${data.email}` }); // Log warning in JSON format
         } else {
             // hash password
             let salt = bcrypt.genSaltSync(10);
@@ -41,7 +41,7 @@ let createNewUser = (data) => {
                 function(err, rows) {
                     if (err) {
                         reject(false);
-                        logger.error(`Error while creating a new user: ${err}`);
+                        logger.error({ message: `Error while creating a new user: ${err}` }); // Log error in JSON format
                     }
                     resolve("Create a new user successful");
                 }
@@ -58,7 +58,7 @@ let checkExistEmail = (email) => {
                 function(err, rows) {
                     if (err) {
                         reject(err);
-                        logger.error(`Error while checking existing email: ${err}`);
+                        logger.error({ message: `Error while checking existing email: ${err}` }); // Log error in JSON format
                     }
                     if (rows.length > 0) {
                         resolve(true);
@@ -69,7 +69,7 @@ let checkExistEmail = (email) => {
             );
         } catch (err) {
             reject(err);
-            logger.error(`Error while checking existing email: ${err}`);
+            logger.error({ message: `Error while checking existing email: ${err}` }); // Log error in JSON format
         }
     });
 };

@@ -7,7 +7,7 @@ const logger = winston.createLogger({
     level: 'info',
     format: winston.format.combine(
         winston.format.timestamp(),
-        winston.format.simple()
+        winston.format.json() // Use JSON format for logging
     ),
     transports: [
         new winston.transports.Console(),
@@ -16,8 +16,8 @@ const logger = winston.createLogger({
 });
 
 // Add transports for error and warn levels
-logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
-logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+logger.add(new winston.transports.File({ filename: 'error.log', level: 'error', format: winston.format.json() }));
+logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn', format: winston.format.json() }));
 
 let handleLogin = (email, password) => {
     return new Promise(async (resolve, reject) => {
@@ -30,12 +30,12 @@ let handleLogin = (email, password) => {
                     resolve(true);
                 } else {
                     reject(`The password that you've entered is incorrect`);
-                    logger.error(`Failed login attempt for email: ${email}`);
+                    logger.error({ message: `Failed login attempt for email: ${email}` }); // Log error in JSON format
                 }
             });
         } else {
             reject(`This user email "${email}" doesn't exist`);
-            logger.error(`Login attempt for non-existing email: ${email}`);
+            logger.error({ message: `Login attempt for non-existing email: ${email}` }); // Log error in JSON format
         }
     });
 };
@@ -48,8 +48,8 @@ let findUserByEmail = (email) => {
                 ' SELECT * FROM `users` WHERE `email` = ?  ', email,
                 function(err, rows) {
                     if (err) {
-                        reject(err)
-                        logger.error(`Error while finding user by email: ${err}`);
+                        reject(err);
+                        logger.error({ message: `Error while finding user by email: ${err}` }); // Log error in JSON format
                     }
                     let user = rows[0];
                     resolve(user);
@@ -57,7 +57,7 @@ let findUserByEmail = (email) => {
             );
         } catch (err) {
             reject(err);
-            logger.error(`Error while finding user by email: ${err}`);
+            logger.error({ message: `Error while finding user by email: ${err}` }); // Log error in JSON format
         }
     });
 };
@@ -69,8 +69,8 @@ let findUserById = (id) => {
                 ' SELECT * FROM `users` WHERE `id` = ?  ', id,
                 function(err, rows) {
                     if (err) {
-                        reject(err)
-                        logger.error(`Error while finding user by ID: ${err}`);
+                        reject(err);
+                        logger.error({ message: `Error while finding user by ID: ${err}` }); // Log error in JSON format
                     }
                     let user = rows[0];
                     resolve(user);
@@ -78,7 +78,7 @@ let findUserById = (id) => {
             );
         } catch (err) {
             reject(err);
-            logger.error(`Error while finding user by ID: ${err}`);
+            logger.error({ message: `Error while finding user by ID: ${err}` }); // Log error in JSON format
         }
     });
 };
@@ -91,12 +91,12 @@ let comparePassword = (password, userObject) => {
                     resolve(true);
                 } else {
                     resolve(`The password that you've entered is incorrect`);
-                    logger.error(`Failed password comparison for user ID: ${userObject.id}`);
+                    logger.error({ message: `Failed password comparison for user ID: ${userObject.id}` }); // Log error in JSON format
                 }
             });
         } catch (e) {
             reject(e);
-            logger.error(`Error while comparing passwords: ${e}`);
+            logger.error({ message: `Error while comparing passwords: ${e}` }); // Log error in JSON format
         }
     });
 };

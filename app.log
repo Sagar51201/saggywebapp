@@ -310,3 +310,13 @@
 {"level":"info","message":"Rendering register page","timestamp":"2024-04-16T05:27:05.843Z"}
 {"level":"error","message":"Error creating new user:","timestamp":"2024-04-16T05:27:15.058Z"}
 {"level":"info","message":"Rendering register page","timestamp":"2024-04-16T05:27:15.063Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-04-24T14:54:51.501Z"}
+{"level":"info","message":"Metrics server is running on port 9091","timestamp":"2024-04-24T14:54:51.504Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-04-24T14:54:57.403Z"}
+{"level":"info","message":"User with email avatharsk@gmail.com not found","timestamp":"2024-04-24T14:55:07.149Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-04-24T14:55:07.160Z"}
+{"level":"info","message":"Authentication failed for user 1: The password that you've entered is incorrect","timestamp":"2024-04-24T14:55:45.686Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-04-24T14:55:45.695Z"}
+{"level":"info","message":"Rendering register page","timestamp":"2024-04-24T14:56:01.375Z"}
+{"level":"error","message":"Error creating new user:","timestamp":"2024-04-24T14:56:21.930Z"}
+{"level":"info","message":"Rendering register page","timestamp":"2024-04-24T14:56:21.947Z"}

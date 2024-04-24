@@ -14,8 +14,8 @@ const logger = winston.createLogger({
 });
 
 // Add transports for error and warn levels
-logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
-logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+logger.add(new winston.transports.File({ filename: 'error.log', level: 'error', format: winston.format.json() }));
+logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn', format: winston.format.json() }));
 
 let handleHelloWorld = async (req, res) => {
     try {
@@ -24,7 +24,7 @@ let handleHelloWorld = async (req, res) => {
             user: req.user
         });
     } catch (error) {
-        logger.error('Error rendering homepage:', error);
+        logger.error({ message: 'Error rendering homepage', error }); // Log error in JSON format
         return res.status(500).send('Internal Server Error');
     }
 };

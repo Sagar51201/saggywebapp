@@ -25,13 +25,24 @@ const logger = winston.createLogger({
     ),
     transports: [
         new winston.transports.Console(),
-        new winston.transports.File({ filename: 'app.log' })
+        new winston.transports.File({ 
+            filename: 'app.log',
+            format: winston.format.json() // Setting JSON format for app.log
+        })
     ]
 });
 
-// Add transports for error and warn levels
-logger.add(new winston.transports.File({ filename: 'error.log', level: 'error' }));
-logger.add(new winston.transports.File({ filename: 'warn.log', level: 'warn' }));
+// Add transports for error and warn levels with JSON format
+logger.add(new winston.transports.File({ 
+    filename: 'error.log', 
+    level: 'error',
+    format: winston.format.json() // Setting JSON format for error.log
+}));
+logger.add(new winston.transports.File({ 
+    filename: 'warn.log', 
+    level: 'warn',
+    format: winston.format.json() // Setting JSON format for warn.log
+}));
 
 // Use cookie parser
 app.use(cookieParser('secret'));
