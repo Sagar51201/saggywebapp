@@ -2,10 +2,10 @@ require('dotenv').config();
 import mysql from "mysql2";
 
 let connection = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+    host: 'database-2.c3uwiasuqfca.ap-south-1.rds.amazonaws.com',
+    user: 'admin',
+    password: '123456789',
+    database: 'mydatabase'
 });
 
 connection.connect(function(err) {
