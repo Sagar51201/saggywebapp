@@ -320,3 +320,27 @@
 {"level":"info","message":"Rendering register page","timestamp":"2024-04-24T14:56:01.375Z"}
 {"level":"error","message":"Error creating new user:","timestamp":"2024-04-24T14:56:21.930Z"}
 {"level":"info","message":"Rendering register page","timestamp":"2024-04-24T14:56:21.947Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-05-24T21:51:21.108Z"}
+{"level":"info","message":"Metrics server is running on port 9091","timestamp":"2024-05-24T21:51:21.110Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-05-24T21:51:37.992Z"}
+{"level":"info","message":"User with email avatharsk@gmail.com not found","timestamp":"2024-05-24T21:51:57.496Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-05-24T21:51:57.504Z"}
+{"level":"info","message":"Authentication failed for user 1: The password that you've entered is incorrect","timestamp":"2024-05-24T21:52:10.664Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-05-24T21:52:10.674Z"}
+{"level":"info","message":"User 1 authenticated successfully","timestamp":"2024-05-24T21:52:17.731Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-05-24T21:52:17.744Z"}
+{"level":"info","message":"Rendering newsapi page","timestamp":"2024-05-24T21:52:25.665Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-05-24T21:52:29.754Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-05-24T21:52:36.352Z"}
+{"level":"info","message":"Rendering newsapi page","timestamp":"2024-05-24T21:52:38.319Z"}
+{"level":"info","message":"Building a login system with NodeJS is running on port 8080!","timestamp":"2024-05-25T04:45:41.966Z"}
+{"level":"info","message":"Metrics server is running on port 9091","timestamp":"2024-05-25T04:45:41.969Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-05-25T04:46:32.138Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-05-25T04:47:10.698Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-05-25T04:47:12.028Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-05-25T04:47:18.742Z"}
+{"level":"info","message":"Rendering login page","timestamp":"2024-05-25T04:47:34.899Z"}
+{"level":"info","message":"User 1 authenticated successfully","timestamp":"2024-05-25T04:49:28.140Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-05-25T04:49:28.152Z"}
+{"level":"info","message":"Rendering newsapi page","timestamp":"2024-05-25T04:49:33.104Z"}
+{"level":"info","message":"Rendering homepage","timestamp":"2024-05-25T04:49:53.943Z"}
